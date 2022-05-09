@@ -81,6 +81,13 @@ Use the following syntax to define a service identity:
 
 <CodeTabs>
 
+```hcl
+ServiceIdentities = {
+  ServiceName = "<service name>"
+  Datacenters = ["<datacenter name>"]
+}
+```
+
 ```json
 {
   "ServiceIdentities": [
@@ -89,14 +96,6 @@ Use the following syntax to define a service identity:
       "Datacenters": ["<datacenter name>"]
     }
   ]
-}
-```
-
-
-```hcl
-ServiceIdentities = {
-  ServiceName = "<service name>"
-  Datacenters = ["<datacenter name>"]
 }
 ```
 
@@ -255,6 +254,13 @@ Use the following syntax to define a node identity:
 
 <CodeTabs>
 
+```hcl
+NodeIdentities = {
+  NodeName = "<node name>"
+  Datacenters = ["<datacenter name>"]
+}
+```
+
 ```json
 {
   "NodeIdentities": [
@@ -263,14 +269,6 @@ Use the following syntax to define a node identity:
       "Datacenters": ["<datacenter name>"]
     }
   ]
-}
-```
-
-
-```hcl
-NodeIdentities = {
-  NodeName = "<node name>"
-  Datacenters = ["<datacenter name>"]
 }
 ```
 
