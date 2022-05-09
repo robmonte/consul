@@ -248,7 +248,7 @@ A TTL check:
 <CodeTabs heading="TTL Check">
 
 ```hcl
-check =  {
+check = {
   id = "web-app"
   name = "Web App Status"
   notes = "Web app does a curl internally every 10 seconds"
@@ -482,11 +482,11 @@ health check definition, like so:
 <CodeTabs heading="Status Field Example">
 
 ```hcl
-check =  {
-  "id": "mem",
-  "args": ["/bin/check_mem", "-limit", "256MB"]
-  "interval": "10s"
-  "status": "passing"
+check = {
+  id = "mem"
+  args = ["/bin/check_mem", "-limit", "256MB"]
+  interval = "10s"
+  status = "passing"
 }
 ```
 
@@ -516,7 +516,7 @@ provided by adding a `service_id` field to a check configuration:
 <CodeTabs heading="Status Field Example">
 
 ```hcl
-check =  {
+check = {
   id = "web-app"
   name =  "Web App Status"
   service_id =  "web-app"
