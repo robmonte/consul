@@ -255,11 +255,6 @@ operator = "read"
 
 ```json
 {
-  "key": {
-    "foo/bar/secret": {
-      "policy": "deny"
-    }
-  },
   "key_prefix": {
     "": {
       "policy": "read"
@@ -269,7 +264,12 @@ operator = "read"
     },
     "foo/private/": {
       "policy": "deny"
-    },
+    }
+  },
+  "key": {
+    "foo/bar/secret": {
+      "policy": "deny"
+    }
   },
   "operator": "read"
 }
@@ -513,6 +513,11 @@ session_prefix "" {
 
 ```json
 {
+  "agent_prefix": {
+    "": {
+      "policy": "read"
+    }
+  },
   "key_prefix": {
     "vault/": {
       "policy": "write"
@@ -521,11 +526,6 @@ session_prefix "" {
   "service": {
     "vault": {
       "policy": "write"
-    }
-  },
-  "agent_prefix": {
-    "": {
-      "policy": "read"
     }
   },
   "session_prefix": {
