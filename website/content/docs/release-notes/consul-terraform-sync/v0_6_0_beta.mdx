@@ -212,9 +212,9 @@ Response:
 ```
 
 ## CTS Service Registration With Consul
-CTS by default will automatically register itself as a service in Consul with a health check. The default health check created is an HTTP check to the [health API endpoint](#health-endpoint). If CTS is stopped, it will deregister itself with Consul.
+By default, CTS automatically registers itself as a service in Consul with a health check. The default health check is an HTTP check to the [health API endpoint](#health-endpoint). CTS deregisters itself with Consul when it is stopped.
 
-If CTS is unsuccessful at registering itself with Consul, then CTS will log the error and continue without exiting.
+If CTS is unable to register with Consul, then it will log the error and continue without exiting.
 
 ~> If ACLs are enabled in Consul, then the [Consul token](/docs/nia/configuration#token) must have the policy `service:write` for service registration to succeed.
 
@@ -248,8 +248,8 @@ The configuration options for `consul.service_registration` are:
 
 | Name            | Required | Type    | Description                     |Default                  |
 | --------------- | -------- | ------- | ------------------------------- | ----------------------- |
-| `enabled ` | Optional | boolean | Whether CTS should automatically register itself as a service with Consul. | `true` |
+| `enabled ` | Optional | boolean | Enables CTS to register itself as a service with Consul. | `true` |
 | `service_name` | Optional | string | The service name for CTS. | "Consul-Terraform-Sync" |
 | `namespace` | Optional | string |  <EnterpriseAlert inline /> The namespace to register CTS in. | In order of precedence: <br/> 1. Inferred from the CTS ACL token <br/> 2. The `default` namespace. |
-| `default_check.enabled` | Optional | boolean | Whether CTS should create the default health check. | `true` |
-| `default_check.address` | Optional | string | The address to use for the default HTTP health check. Needs to include the scheme (http/https) and the port (if necessary). | `http://localhost:<port>` or `https://localhost:<port>`. Determined from the [port configuration](/docs/nia/configuration#port) and whether [TLS is enabled](/docs/nia/configuration#enabled-2) on the CTS API. |
+| `default_check.enabled` | Optional | boolean | Enables CTS to create the default health check. | `true` |
+| `default_check.address` | Optional | string | The address to use for the default HTTP health check. Needs to include the scheme (`http`/`https`) and the port (if necessary). | `http://localhost:<port>` or `https://localhost:<port>`. Determined from the [port configuration](/docs/nia/configuration#port) and whether [TLS is enabled](/docs/nia/configuration#enabled-2) on the CTS API. |
